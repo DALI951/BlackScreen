@@ -1,21 +1,19 @@
 package com.dali951.blackscreen
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import android.widget.Switch
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SwitchCompat
 import androidx.appcompat.widget.Toolbar
-import androidx.core.graphics.drawable.DrawableCompat
 
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var prefs: PrefsManager
-    private lateinit var switchClock: Switch
-    private lateinit var switchDate: Switch
-    private lateinit var switchBattery: Switch
-    private lateinit var switchMedia: Switch
+    private lateinit var switchClock: SwitchCompat
+    private lateinit var switchDate: SwitchCompat
+    private lateinit var switchBattery: SwitchCompat
+    private lateinit var switchMedia: SwitchCompat
     private lateinit var spinnerTimeout: Spinner
 
     private val timeoutValues = longArrayOf(5_000L, 10_000L, 15_000L, 30_000L, 0L)
@@ -33,7 +31,6 @@ class SettingsActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.title = getString(R.string.settings_title)
-
         toolbar.setNavigationOnClickListener { finish() }
 
         switchClock = findViewById(R.id.switchClock)

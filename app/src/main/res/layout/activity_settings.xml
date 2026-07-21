@@ -33,7 +33,7 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="12dp"/>
 
-            <Switch
+            <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switchClock"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,9 +42,10 @@
                 android:textSize="16sp"
                 android:checked="true"
                 android:layout_marginBottom="12dp"
-                android:minHeight="48dp"/>
+                android:minHeight="48dp"
+                android:padding="8dp"/>
 
-            <Switch
+            <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switchDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -53,9 +54,10 @@
                 android:textSize="16sp"
                 android:checked="true"
                 android:layout_marginBottom="12dp"
-                android:minHeight="48dp"/>
+                android:minHeight="48dp"
+                android:padding="8dp"/>
 
-            <Switch
+            <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switchBattery"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,9 +66,10 @@
                 android:textSize="16sp"
                 android:checked="true"
                 android:layout_marginBottom="12dp"
-                android:minHeight="48dp"/>
+                android:minHeight="48dp"
+                android:padding="8dp"/>
 
-            <Switch
+            <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/switchMedia"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,7 +78,8 @@
                 android:textSize="16sp"
                 android:checked="true"
                 android:layout_marginBottom="24dp"
-                android:minHeight="48dp"/>
+                android:minHeight="48dp"
+                android:padding="8dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -120,7 +124,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="BlackScreen v0.1.0\n\nOLED black screen overlay with configurable Always-On Display.\n\nAccessibility services can click through the black overlay."
+                android:text="BlackScreen v0.3.0\n\nOLED black screen overlay with configurable Always-On Display.\n\nAccessibility services can click through the black overlay."
                 android:textColor="@color/light_gray"
                 android:textSize="14sp"
                 android:lineSpacingMultiplier="1.3"/>

@@ -9,7 +9,6 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.PixelFormat
-import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Handler
 import android.os.IBinder
@@ -19,7 +18,6 @@ import android.view.Gravity
 import android.view.MotionEvent
 import android.view.View
 import android.view.WindowManager
-import android.widget.FrameLayout
 import android.widget.ImageView
 
 class OverlayService : Service() {
@@ -39,9 +37,6 @@ class OverlayService : Service() {
 
     private val handler = Handler(Looper.getMainLooper())
     private var aodHideRunnable: Runnable? = null
-
-    private var floatingButtonX = 0
-    private var floatingButtonY = 0
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -119,9 +114,6 @@ class OverlayService : Service() {
             x = resources.displayMetrics.widthPixels - size - (16 * resources.displayMetrics.density).toInt()
             y = (resources.displayMetrics.heightPixels * 0.4).toInt()
         }
-
-        floatingButtonX = params.x
-        floatingButtonY = params.y
 
         var initialX = 0
         var initialY = 0
@@ -210,9 +202,12 @@ class OverlayService : Service() {
             WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE or
                     WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
                     WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
-                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-            PixelFormat.OPAQUE
-        )
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or
+                    WindowManager.LayoutParams.FLAG_DIM_BEHIND,
+            PixelFormat.RGBX_8888
+        ).apply {
+            dimAmount = 1.0f
+        }
 
         blackOverlay = overlay
         windowManager.addView(overlay, params)
@@ -247,9 +242,12 @@ class OverlayService : Service() {
             WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE or
                     WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or
                     WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
-                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                    WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS or
+                    WindowManager.LayoutParams.FLAG_DIM_BEHIND,
             PixelFormat.TRANSLUCENT
-        )
+        ).apply {
+            dimAmount = 1.0f
+        }
 
         aodView = renderer
         windowManager.addView(renderer, params)
