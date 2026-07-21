@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BlackScreen</string>
+    <string name="settings">Settings</string>
+    <string name="start">Start Service</string>
+    <string name="stop">Stop Service</string>
+    <string name="service_running">BlackScreen overlay active</string>
+    <string name="service_notification_channel">Overlay Service</string>
+    <string name="service_notification_title">BlackScreen Active</string>
+    <string name="service_notification_text">Tap to open settings</string>
+    <string name="grant_permission">Grant Overlay Permission</string>
+    <string name="permission_required">Overlay permission is required for BlackScreen to work.</string>
+    <string name="status_running">Service is running</string>
+    <string name="status_stopped">Service is stopped</string>
+    <string name="settings_title">AOD Settings</string>
+    <string name="pref_show_clock">Show Clock</string>
+    <string name="pref_show_date">Show Date</string>
+    <string name="pref_show_battery">Show Battery</string>
+    <string name="pref_show_media">Show Media Info</string>
+    <string name="pref_aod_timeout">AOD Timeout</string>
+    <string name="pref_aod_timeout_summary">How long AOD stays visible</string>
+    <string name="timeout_5s">5 seconds</string>
+    <string name="timeout_10s">10 seconds</string>
+    <string name="timeout_15s">15 seconds</string>
+    <string name="timeout_30s">30 seconds</string>
+    <string name="timeout_forever">Until dismissed</string>
+    <string name="aod_controls">AOD Controls</string>
+    <string name="aod_description">Double-tap the floating button to show Always-On Display</string>
+    <string name="tap_to_toggle">Tap: toggle black screen</string>
+    <string name="double_tap_aod">Double-tap: show AOD</string>
+</resources>
