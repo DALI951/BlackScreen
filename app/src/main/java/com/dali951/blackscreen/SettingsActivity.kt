@@ -1,11 +1,13 @@
 package com.dali951.blackscreen
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Switch
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.graphics.drawable.DrawableCompat
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -28,7 +30,10 @@ class SettingsActivity : AppCompatActivity() {
         prefs = PrefsManager(this)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setNavigationIcon(android.R.drawable.ic_menu_revert)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = getString(R.string.settings_title)
+
         toolbar.setNavigationOnClickListener { finish() }
 
         switchClock = findViewById(R.id.switchClock)
@@ -62,5 +67,10 @@ class SettingsActivity : AppCompatActivity() {
             }
             override fun onNothingSelected(parent: android.widget.AdapterView<*>?) {}
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 }

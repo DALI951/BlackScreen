@@ -12,8 +12,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/surface"
         android:title="@string/settings_title"
-        android:titleTextColor="@color/white"
-        android:navigationIconTint="@color/white"/>
+        android:titleTextColor="@color/white"/>
 
     <ScrollView
         android:layout_width="match_parent"
